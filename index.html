@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Campus Mart — Online Store</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <div class="logo">CM</div>
+    <div>
+      <div class="title">Campus Mart</div>
+      <div class="subtitle">Smart Online Store</div>
+    </div>
+  </div>
+
+  <nav>
+    <button id="navProducts" class="active">Products</button>
+    <button id="navOrders">Order Tracking</button>
+  </nav>
+
+  <div class="cart-summary">
+    <span id="openCart" class="smalllink">Cart (<span id="cartCount">0</span>)</span>
+  </div>
+</header>
+
+<main class="container">
+  <div class="grid">
+    <!-- MAIN SECTION -->
+    <section id="mainPanel">
+      <!-- PRODUCTS -->
+      <div id="productsView">
+        <h2>Products</h2>
+        <p class="muted">Explore our Books, Courses, and Notes.</p>
+
+        <div class="filter-bar">
+          <select id="filterCategory">
+            <option value="all">All categories</option>
+            <option value="book">Books</option>
+            <option value="course">Courses</option>
+            <option value="note">Notes</option>
+          </select>
+          <input id="searchBox" placeholder="Search products..." />
+        </div>
+
+        <div class="products" id="productsGrid"></div>
+      </div>
+
+      <!-- ORDER TRACKING -->
+      <div id="ordersView" style="display:none">
+        <h2>Order Tracking</h2>
+        <p class="muted">Enter your email to view orders placed.</p>
+
+        <div class="filter-bar">
+          <input id="trackEmail" placeholder="you@example.com" />
+          <button id="btnTrack" class="btn small">Track Orders</button>
+        </div>
+
+        <div id="ordersContainer" class="orders-list"></div>
+      </div>
+    </section>
+
+    <!-- CART -->
+    <aside id="cartPanel" class="card">
+      <h3>Your Cart</h3>
+      <div class="cart-list" id="cartList">
+        <div class="muted">Cart is empty</div>
+      </div>
+
+      <div class="totals">
+        <div class="row"><div class="muted">Subtotal</div><div id="subtotal">₹0</div></div>
+        <div class="row"><div class="muted">Delivery</div><div id="deliveryFee">₹0</div></div>
+        <div class="row total"><div>Total</div><div id="grandTotal">₹0</div></div>
+      </div>
+
+      <div class="checkout">
+        <label>Email ID <input id="checkoutEmail" type="email" placeholder="you@example.com" /></label>
+        <label>Delivery City <input id="checkoutCity" type="text" placeholder="e.g. Chennai" /></label>
+        <label class="checkbox"><input id="simulateRain" type="checkbox" /> Simulate rainy (adds +2 days)</label>
+        <button id="btnCheckout" class="btn">Place Order</button>
+        <div id="checkoutMsg" class="muted"></div>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<!-- SUCCESS POPUP -->
+<div id="popup" class="popup hidden">
+  <div class="popup-box">
+    <h3>✅ Your order was placed successfully!</h3>
+    <p>Thank you for shopping with <strong>Campus Mart</strong>.</p>
+    <button class="btn" id="closePopup">OK</button>
+  </div>
+</div>
+
+<footer>
+  © 2026 Campus Mart • Built with HTML, CSS & JS
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
